@@ -37,6 +37,10 @@ const Wrapper = styled.div`
   button {
     margin-top: 70px;
   }
+
+  @media only screen and (max-width: 700px) {
+    height: 90%;
+  }
 `
 
 const Circle = styled.div`
