@@ -16,6 +16,10 @@ const Container = styled.div`
   mix-blend-mode: normal;
   padding: 4% 5%;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const Img = styled.div`
@@ -40,6 +44,7 @@ const Content = styled.div`
 
   @media only screen and (max-width: 700px) {
     width: 100%;
+    padding: 5% 7%;
   }
 `
 
@@ -49,6 +54,11 @@ const Wrapper = styled.div`
   display: flex;
   border-radius: 32px;
   overflow: hidden;
+
+  @media only screen and (max-width: 700px) {
+    border-radius: 16px;
+    height: 92%;
+  }
 `
 
 const Btn = styled.div`
