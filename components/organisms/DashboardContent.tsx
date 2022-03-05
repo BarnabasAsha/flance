@@ -21,6 +21,10 @@ const Wrapper = styled.div`
   height: 100%;
   overflow-y: auto;
   padding: 48px 38px;
+
+  @media only screen and (max-width: 700px) {
+    padding: 20px 38px;
+  }
 `
 
 const Hero = styled.div`
