@@ -97,7 +97,8 @@ const Wrapper = styled.div<{ show?: boolean }>`
 
 const Logo = styled.div`
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: 10px;
 
   img {
     width: 138px;
