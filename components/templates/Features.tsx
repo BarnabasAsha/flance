@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { ApplySvg, TrackSvg, SignSvg, CollaborateSvg, Text, Button } from "../atoms"
 import { Card } from "../molecules"
+import { FeaturesList, FeaturesContent } from "../organisms"
 
 const list = [
   {
@@ -45,19 +46,6 @@ const Container = styled.section`
   background: ${props => props.theme.prim};
 `
 
-const FeaturesContent = styled.div`
-  width: 40%;
-  min-width: 500px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
-
-  @media only screen and (max-width: 700px) {
-    width: 100%;
-    min-width: 100%;
-  }
-`
-
 const Circle = styled.div`
   width: 984px;
   height: 1041.81px;
@@ -73,19 +61,6 @@ const Circle = styled.div`
   }
 `
 
-const FeaturesList = styled.div`
-  width: auto;
-  max-width: 600px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-
-  @media only screen and (max-width: 700px) {
-    width: 100%;
-  }
-`
 const Features = () => (
   <Container>
     <FeaturesWrapper>

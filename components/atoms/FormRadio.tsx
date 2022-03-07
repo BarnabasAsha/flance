@@ -29,6 +29,10 @@ const Wrapper = styled.label`
     border: 1px solid #E0E0E0;
     border-radius: 16px;
     z-index: 5;
+
+    &:hover {
+    outline: 1px solid ${props => props.theme.prim};
+    }
   }
 
   input[type=radio] {
@@ -40,7 +44,7 @@ const Wrapper = styled.label`
     overflow: hidden;
 
     &:checked + .radio {
-    border: 1px solid ${props => props.theme.prim};
+    outline: 1px solid ${props => props.theme.prim};
     }
   }
 
