@@ -7,11 +7,15 @@ const Login = () => {
   const showOnboarding = () => {
     setShow(true)
   }
+
+  const closeOnboarding = () => {
+    setShow(false)
+  }
   return (
     <AuthLayout>
       <SignupForm showOnboarding={showOnboarding} />
       {
-        show && <Onboarding />
+        show && <Onboarding closeOnboarding={closeOnboarding} />
       }
     </AuthLayout>
   )

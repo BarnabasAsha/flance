@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import styled from "styled-components";
+import ClickAwayListener from 'react-click-away-listener';
 import { OnboardingBanner } from ".";
 import OnboardingTrack from "../molecules/OnboardingTrack";
 import { FormStep } from "../organisms";
@@ -75,7 +76,7 @@ const Btn = styled.div`
   cursor: pointer;
 `
 
-const Onboarding = () => {
+const Onboarding = ({ closeOnboarding }: { closeOnboarding: () => void }) => {
   const [activeStep, setActiveStep] = useState(0)
   const [showBanner, setShowBanner] = useState(false)
 
@@ -97,32 +98,34 @@ const Onboarding = () => {
 
   return (
     <Container>
-      {
-        showBanner ? (
-          <OnboardingBanner />
-        ) : (
-          <Wrapper>
-            <Img>
-              <img src="/images/onboarding-img.png" alt="" />
-            </Img>
-            <Content>
-              <div>
-                <OnboardingTrack step={activeStep} />
-                <FormStep handleChange={handleNext} {...steps[activeStep]} />
-              </div>
-              {activeStep !== 0 && (
-                <Btn onClick={handlePrev}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18L9 12L15 6" stroke="#8761F5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+      <ClickAwayListener onClickAway={closeOnboarding}>
+        {
+          showBanner ? (
+            <OnboardingBanner />
+          ) : (
+            <Wrapper>
+              <Img>
+                <img src="/images/onboarding-img.png" alt="" />
+              </Img>
+              <Content>
+                <div>
+                  <OnboardingTrack step={activeStep} />
+                  <FormStep handleChange={handleNext} {...steps[activeStep]} />
+                </div>
+                {activeStep !== 0 && (
+                  <Btn onClick={handlePrev}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 18L9 12L15 6" stroke="#8761F5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
 
-                  Go Back
-                </Btn>
-              )}
-            </Content>
-          </Wrapper>
-        )
-      }
+                    Go Back
+                  </Btn>
+                )}
+              </Content>
+            </Wrapper>
+          )
+        }
+      </ClickAwayListener>
     </Container>
   )
 }

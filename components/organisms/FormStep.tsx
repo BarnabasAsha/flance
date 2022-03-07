@@ -43,20 +43,28 @@ const Header = styled.div<{ reverse: boolean }>`
   row-gap: 5px;
 `
 
-const FormStep = ({ title, subtitle, options, name, handleChange, stepOne = false }: Props) => (
-  <Wrapper>
-    <Header reverse={stepOne}>
-      <Text greyText>{subtitle}</Text>
-      <Text as="h3" lg bold>{title}</Text>
-    </Header>
-    <Flex grid={stepOne}>
-      {
-        options.map(option => (
-          <FormRadio key={option.label} value={option.label} label={option.label} icon={option.icon} name={name} onChange={() => handleChange()} />
-        ))
-      }
-    </Flex>
-  </Wrapper>
-)
+const FormStep = ({ title, subtitle, options, name, handleChange, stepOne = false }: Props) => {
 
+  const moveNext = () => {
+    setTimeout(() => {
+      handleChange()
+    }, 500)
+  }
+  return (
+    <Wrapper>
+      <Header reverse={stepOne}>
+        <Text greyText>{subtitle}</Text>
+        <Text as="h3" lg bold>{title}</Text>
+      </Header>
+      <Flex grid={stepOne}>
+        {
+          options.map(option => (
+            <FormRadio key={option.label} value={option.label} label={option.label} icon={option.icon} name={name} onChange={moveNext} />
+          ))
+        }
+      </Flex>
+    </Wrapper>
+  )
+
+}
 export default FormStep
