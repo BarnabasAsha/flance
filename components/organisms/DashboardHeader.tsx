@@ -1,9 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 import { useState } from "react"
-import styled from "styled-components"
-import { ClientsSvg, ContractSvg, EarningsSvg, JobsSvg, LogoSvg, NavLink, OverviewSvg, PayoutSvg, ProjectsSvg, ProposalsSvg, SchedulesSvg, Text } from "../atoms"
+import styled, { keyframes } from "styled-components"
+import { ClientsSvg, ContractSvg, EarningsSvg, JobsSvg, NavLink, OverviewSvg, PayoutSvg, ProjectsSvg, ProposalsSvg, SchedulesSvg, Text } from "../atoms"
 import SettingsSvg from "../atoms/icons/settings-svg"
+
+
+const menuAnimate = keyframes`
+  0% {transform: translateX(-150px)}
+  100% {transform: translateX(0)}
+`
 
 const Container = styled.header`
    width: 30%;
@@ -72,13 +78,16 @@ const Wrapper = styled.div<{ show?: boolean }>`
 
   @media only screen and (max-width: 700px) {
     width: 30%;
-  max-width: 256px;
+    max-width: 256px;
     position: fixed;
     top: 0;
     left: 0;
     width: auto;
     z-index: 100;
     display: none;
+    animation: ${menuAnimate};
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
     ${props => props.show && `
       display: flex;
@@ -88,20 +97,10 @@ const Wrapper = styled.div<{ show?: boolean }>`
 
 const Logo = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
   margin-bottom: 30px;
-  column-gap: 5px;
 
-  svg {
-    width: 40px;
-  }
-
-  p {
-    font-size: 26px;
-    line-height: 36px;
-    color: #5454D4;  
-    font-weight: bold;
+  img {
+    width: 138px;
   }
 `
 
@@ -187,8 +186,7 @@ const DashboardHeader = () => {
       </button>
       <Wrapper show={showHeader}>
         <Logo>
-          <LogoSvg />
-          <Text josefin>Flance</Text>
+          <img src="/images/logo.svg" alt="" />
         </Logo>
         <MainNav>
           {

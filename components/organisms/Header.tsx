@@ -82,13 +82,12 @@ const Menu = styled.button`
         }
 `
 
-
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
   return (
     <HeaderWrapper>
       <ImgWrapper>
-        <img src="/images/flance-logo.png" alt="" />
+        <img src="/images/logo.svg" alt="" />
       </ImgWrapper>
       <CtaWrapper show={showMenu}>
         <Menu onClick={() => setShowMenu(state => !state)}>
