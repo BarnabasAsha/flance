@@ -6,19 +6,6 @@ const bgAnimate = keyframes`
   100% {opacity: 0.9;}
 `
 
-const variants = {
-  visible: {
-    "&::before": {
-      transform: "translateX(100%)"
-    }
-  },
-  hidden: {
-    "&::before": {
-      transform: "translateX(0)"
-    }
-  }
-};
-
 const HeroWrapper = styled.div`
 position: relative;
 width: 100%;

@@ -1,9 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Text } from '../atoms'
 import Button from '../atoms/Button'
+
+const menuAnimate = keyframes`
+  0% {transform: translateX(50px)}
+  100% {transform: translateX(0)}
+`
 
 const HeaderWrapper = styled.header`
 position: relative;
@@ -42,6 +47,9 @@ const CtaWrapper = styled.nav<{ show: boolean }>`
       row-gap: 20px;
       border-radius: 24px;
       box-shadow: 0px 52px 54px rgba(65, 62, 101, 0.102519);
+      animation: ${menuAnimate};
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
     }
   }
 `
