@@ -22,7 +22,7 @@ const FeaturesContent = ({ children }: { children: React.ReactNode }) => {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { x: 0, transition: { duration: 2 } },
+    visible: { x: 0, transition: { duration: 1 } },
     hidden: { x: '20vw' }
   }
 
