@@ -98,11 +98,11 @@ const Onboarding = ({ closeOnboarding }: { closeOnboarding: () => void }) => {
 
   return (
     <Container>
-      <ClickAwayListener onClickAway={closeOnboarding}>
-        {
-          showBanner ? (
-            <OnboardingBanner />
-          ) : (
+      {
+        showBanner ? (
+          <OnboardingBanner />
+        ) : (
+          <ClickAwayListener onClickAway={closeOnboarding}>
             <Wrapper>
               <Img>
                 <img src="/images/onboarding-img.png" alt="" />
@@ -123,9 +123,9 @@ const Onboarding = ({ closeOnboarding }: { closeOnboarding: () => void }) => {
                 )}
               </Content>
             </Wrapper>
-          )
-        }
-      </ClickAwayListener>
+          </ClickAwayListener>
+        )
+      }
     </Container>
   )
 }
