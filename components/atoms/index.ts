@@ -6,6 +6,7 @@ export { default as FormCheck } from "./FormCheck"
 export { default as AltButton } from "./AltButton"
 export { default as Button } from "./Button"
 export { default as SearchBar } from "./SearchBar"
+export { default as Circle } from "./Circle"
 
 
 export { default as CurveSvg } from "./icons/curve-svg"

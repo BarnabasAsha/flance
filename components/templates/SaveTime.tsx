@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import styled from "styled-components";
 import { Text, Button } from "../atoms"
+import { useEffect } from "react"
+import { useInView } from "react-intersection-observer"
+import { motion, useAnimation } from "framer-motion"
 
 
 const Container = styled.div`
@@ -43,19 +46,35 @@ const Img = styled.div`
   }
 `
 
-const SaveTime = () => (
-  <Container>
-    <Wrapper>
-      <Content>
-        <Text xl as="h2" bold>Save time while we make the business of freelance easy.</Text>
-        <Text md>Handle all your projects, Contracts, proposals, payment expenses ad collaboration all in one platform.</Text>
-        <Button primary md>Join Now</Button>
-      </Content>
-      <Img>
-        <img src="/images/home-img-2.png" alt="" />
-      </Img>
-    </Wrapper>
-  </Container>
-)
+const SaveTime = () => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+
+  const variants = {
+    visible: { x: 0, transition: { duration: 1 } },
+    hidden: { x: '20vw' }
+  }
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <Container>
+      <Wrapper>
+        <Content>
+          <Text xl as="h2" bold>Save time while we make the business of freelance easy.</Text>
+          <Text md>Handle all your projects, Contracts, proposals, payment expenses ad collaboration all in one platform.</Text>
+          <Button primary md>Join Now</Button>
+        </Content>
+        <Img ref={ref} as={motion.div} animate={controls} variants={variants} initial="hidden">
+          <img src="/images/home-img-2.png" alt="" />
+        </Img>
+      </Wrapper>
+    </Container>
+  )
+}
 
 export default SaveTime

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { ApplySvg, TrackSvg, SignSvg, CollaborateSvg, Text, Button } from "../atoms"
+import { ApplySvg, TrackSvg, SignSvg, CollaborateSvg, Text, Button, Circle } from "../atoms"
 import { Card } from "../molecules"
 import { FeaturesList, FeaturesContent } from "../organisms"
 
@@ -46,37 +46,25 @@ const Container = styled.section`
   background: ${props => props.theme.prim};
 `
 
-const Circle = styled.div`
-  width: 984px;
-  height: 1041.81px;
-  background: #FEDC5A;
-  position: absolute;
-  top: -900px;
-  right: -400px;
-  border-radius: 50%;
+const Features = () => {
 
-  @media only screen and (max-width: 700px) {
-    top: -940px;
-  right: -550px;
-  }
-`
-
-const Features = () => (
-  <Container>
-    <FeaturesWrapper>
-      <FeaturesList>
-        {
-          list.map(feature => <Card key={feature.title} {...feature} />)
-        }
-      </FeaturesList>
-      <FeaturesContent>
-        <Text white xl as="h2" bold>Its everything<br /> you&#39;ll ever need.</Text>
-        <Text white md>All the freelance business in one place and save time as your handle all your projects, contracts, proposals, payment expenses and  with easy, all in one platform.</Text>
-        <Button outline md>View all features</Button>
-      </FeaturesContent>
-    </FeaturesWrapper>
-    <Circle />
-  </Container>
-)
+  return (
+    <Container>
+      <FeaturesWrapper>
+        <FeaturesList>
+          {
+            list.map((feature, index) => <Card key={feature.title} index={index} {...feature} />)
+          }
+        </FeaturesList>
+        <FeaturesContent>
+          <Text white xl as="h2" bold>Its everything<br /> you&#39;ll ever need.</Text>
+          <Text white md>All the freelance business in one place and save time as your handle all your projects, contracts, proposals, payment expenses and  with easy, all in one platform.</Text>
+          <Button outline md>View all features</Button>
+        </FeaturesContent>
+      </FeaturesWrapper>
+      <Circle />
+    </Container>
+  )
+}
 
 export default Features
