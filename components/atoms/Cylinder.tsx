@@ -20,7 +20,7 @@ const Cylinder = () => {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { y: 0, transition: { duration: 1 } },
+    visible: { y: 0, transition: { duration: 1.5 } },
     hidden: { y: 50 }
   }
 

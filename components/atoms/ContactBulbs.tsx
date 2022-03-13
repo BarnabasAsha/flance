@@ -20,7 +20,7 @@ const ContactBulbs = () => {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { rotate: 0, opacity: 1, transition: { duration: 1 } },
+    visible: { rotate: 0, opacity: 1, transition: { duration: 2 } },
     hidden: { rotate: -45, opacity: 0 }
   }
 
