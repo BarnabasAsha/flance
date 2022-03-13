@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styled from "styled-components";
-import { Text, Button, CurveSvg } from "../atoms"
+import { Text, Button, CurveSvg, Cube, Cylinder } from "../atoms"
 
 
 const Container = styled.div`
@@ -45,6 +45,7 @@ const Content = styled.div`
 `
 
 const Img = styled.div`
+position: relative;
   width: 40%;
   z-index: 60;
 
@@ -83,6 +84,8 @@ const JoinTeams = () => (
       <Wrapper>
         <Img>
           <img src="/images/home-img-3.png" alt="" />
+          <Cube />
+          <Cylinder />
         </Img>
         <Content>
           <Text xl as="h2" bold>Join teams and develope Kickass Products</Text>

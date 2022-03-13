@@ -12,6 +12,8 @@ export { default as AtmCard } from "./AtmCard"
 export { default as MsgOne } from "./MsgOne"
 export { default as MsgTwo } from "./MsgTwo"
 export { default as SaveCircle } from "./SaveCircle"
+export { default as Cube } from "./Cube"
+export { default as Cylinder } from "./Cylinder"
 
 
 export { default as CurveSvg } from "./icons/curve-svg"
