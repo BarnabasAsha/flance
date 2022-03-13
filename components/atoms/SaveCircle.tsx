@@ -13,7 +13,7 @@ right: 14%;
 z-index: 2;
 
 @media only screen and (max-width: 700px) {
-  bottom: 69%;
+  bottom: 65%;
   width: 50px;
   height: 50px;
 }

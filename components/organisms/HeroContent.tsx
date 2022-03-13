@@ -110,7 +110,7 @@ const HeroContent = () => {
     <Wrapper>
       <div>
         <Text as={motion.h1} xxl bold center greyHeading animate={{ color: "#ffffff" }} transition={{ duration: 6, delay: 2 }}>Simplifying the administration of freelancing</Text>
-        <Text center josefin lg>spend more time on the actual work and become twice as tall</Text>
+        {/* <Text center josefin lg>spend more time on the actual work and become twice as tall</Text> */}
       </div>
       <Link href="/signup" passHref>
         <Button primary md>Join Now</Button>
@@ -123,7 +123,7 @@ const HeroContent = () => {
       <Circle ref={ref} as={motion.div} animate={controls} variants={sphereVariants} initial="hidden">
         <img src="/images/sphere.png" alt="" />
       </Circle>
-      <CoinOne as={motion.div} animate={{ y: 430 }} transition={{ duration: 8 }}>
+      <CoinOne as={motion.div} animate={{ y: 410 }} transition={{ duration: 8 }}>
         <img src="/images/coin-one.png" alt="" />
       </CoinOne>
       <CoinTwo as={motion.div} animate={{ y: 520 }} transition={{ duration: 8 }}>

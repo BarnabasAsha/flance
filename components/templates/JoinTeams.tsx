@@ -5,7 +5,7 @@ import { Text, Button, CurveSvg, Cube, Cylinder } from "../atoms"
 
 const Container = styled.div`
 position: relative;
-overflow: hidden;
+/* overflow: hidden; */
 width: 100%;
 padding: 180px 5%;;
 

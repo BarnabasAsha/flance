@@ -24,8 +24,8 @@ const Circle = () => {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { scale: 1, transition: { duration: 1 } },
-    hidden: { scale: .8 }
+    visible: { y: 0, transition: { duration: 1 } },
+    hidden: { y: -100 }
   }
 
   useEffect(() => {

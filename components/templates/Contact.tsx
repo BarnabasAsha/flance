@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styled from "styled-components";
-import { Text } from "../atoms";
+import { ContactBulbs, Text } from "../atoms";
 import { ContactForm } from "../molecules";
 
 const Container = styled.section`
@@ -38,6 +38,7 @@ const ContactFlex = styled.div`
 const Img = styled.div`
   width: 50%;
   max-width: 615px;
+  position: relative;
 
   @media only screen and (max-width: 700px) {
     width: 100%;
@@ -105,6 +106,7 @@ const Contact = () => (
         <ContactFlex>
           <Img>
             <img src="/images/cta-img.png" alt="" />
+            <ContactBulbs />
           </Img>
           <Content>
             <Text white bold xl as="h2">Get your Ideas live</Text>

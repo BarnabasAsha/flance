@@ -14,6 +14,7 @@ export { default as MsgTwo } from "./MsgTwo"
 export { default as SaveCircle } from "./SaveCircle"
 export { default as Cube } from "./Cube"
 export { default as Cylinder } from "./Cylinder"
+export { default as ContactBulbs } from "./ContactBulbs"
 
 
 export { default as CurveSvg } from "./icons/curve-svg"

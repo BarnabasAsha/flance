@@ -8,7 +8,7 @@ const Box = styled.div`
 width: 72px;
 position: absolute;
 left: 10%;
-top: 0;
+top: 5%;
 
 @media only screen and (max-width: 700px) {
  width: 40px;
@@ -20,7 +20,7 @@ const Cube = () => {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { y: -10, transition: { duration: 1, delay: 1 } },
+    visible: { y: 0, transition: { duration: 1 } },
     hidden: { y: -50 }
   }
 

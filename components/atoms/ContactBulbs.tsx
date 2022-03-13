@@ -5,23 +5,23 @@ import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
 
 const Box = styled.div`
-width: 72px;
+width: 267px;
 position: absolute;
-right: 10%;
-top: -10%;
+right: 14%;
+top: -20%;
 
 @media only screen and (max-width: 700px) {
- width: 40px;
+ width: 150px;
 }
 `
 
-const Cylinder = () => {
+const ContactBulbs = () => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { y: 0, transition: { duration: 1 } },
-    hidden: { y: 50 }
+    visible: { rotate: 0, opacity: 1, transition: { duration: 1 } },
+    hidden: { rotate: -45, opacity: 0 }
   }
 
   useEffect(() => {
@@ -31,8 +31,8 @@ const Cylinder = () => {
   }, [controls, inView]);
 
   return <Box ref={ref} as={motion.div} animate={controls} variants={variants} initial="hidden">
-    <img src="/images/Cylinder.png" alt="" />
+    <img src="/images/bulb-cursor.png" alt="" />
   </Box>
 }
 
-export default Cylinder
+export default ContactBulbs
