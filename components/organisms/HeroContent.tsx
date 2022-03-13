@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import { motion, useAnimation } from "framer-motion"
 import styled from "styled-components"
-import { Text } from "../atoms"
+import { Text, Coil, AtmCard } from "../atoms"
 import Button from "../atoms/Button"
 
 const Wrapper = styled.div`
@@ -38,6 +38,7 @@ const Wrapper = styled.div`
 `
 
 const ContentImg = styled.div`
+  position: relative;
   max-width: 800px;
   width: 100%;
   z-index: 10;
@@ -116,6 +117,8 @@ const HeroContent = () => {
       </Link>
       <ContentImg>
         <img src="/images/home-img-1.png" alt="" />
+        <Coil />
+        <AtmCard />
       </ContentImg>
       <Circle ref={ref} as={motion.div} animate={controls} variants={sphereVariants} initial="hidden">
         <img src="/images/sphere.png" alt="" />

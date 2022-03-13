@@ -41,7 +41,7 @@ const Card = ({ icon, title, text, index }: Props) => {
   const [ref, inView] = useInView()
 
   const variants = {
-    visible: { scale: 1, transition: { duration: 1, delay: index } },
+    visible: { scale: 1, transition: { duration: 1, delay: index === 0 ? index : index / 2 } },
     hidden: { scale: 0 }
   }
 

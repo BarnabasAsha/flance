@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styled from "styled-components";
-import { Text, Button } from "../atoms"
+import { Text, Button, MsgOne, MsgTwo, SaveCircle } from "../atoms"
 import { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
@@ -14,7 +14,23 @@ padding: 90px 5%;
 background: ${props => props.theme.white};  
 `
 
+const Circle = styled.div`
+  width: 102px;
+  height: 102px;
+  position: absolute;
+  bottom: 10px;
+  left: 17%;
+  z-index: 5;
+
+  @media only screen and (max-width: 700px) {
+    left: 5%;
+    width: 50px;
+    height: 50px;
+  }
+`
+
 const Wrapper = styled.div`
+  position: relative;
   max-width: 1500px;
   margin: 0 auto;
   width: 100%;
@@ -39,6 +55,8 @@ const Content = styled.div`
 `
 
 const Img = styled.div`
+  position: relative;
+  z-index: 10;
   width: 40%;
 
   @media only screen and (max-width: 700px) {
@@ -71,7 +89,10 @@ const SaveTime = () => {
         </Content>
         <Img ref={ref} as={motion.div} animate={controls} variants={variants} initial="hidden">
           <img src="/images/home-img-2.png" alt="" />
+          <MsgOne />
+          <MsgTwo />
         </Img>
+        <SaveCircle />
       </Wrapper>
     </Container>
   )
