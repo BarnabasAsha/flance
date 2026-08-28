@@ -26,8 +26,6 @@ components/
 ├── templates/   # Page-level layouts composed of organisms, without real content
 ```
 
-> Adjust the tree above if your actual folder names differ — update this section to match the real structure once confirmed.
-
 ## Getting Started
 
 Install dependencies, then run the development server:
